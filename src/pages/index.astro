@@ -1,12 +1,37 @@
 ---
 
 import Layout from '../layouts/Layout.astro';
-
+import Badge from '../components/Badge.astro';
+import Linkedin from '../components/Linkedin.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	
+	<main>
+    <section class="'w-full mx-auto lg:w-[740px] py-44">
+        <img 
+        class="rounded-full w-12 h-12 mb-4"
+        src="/igna-icon.png" 
+        alt="igna photo"
+        />
+        <h1 class="text-white text-5xl flex flex-row gap-x-4 pb-4" >
+            <span class="text-[#0F969C]">¡Hola!</span> Soy <span class="font-bold">Juan Ignacio</span>
+            <div class="flex justify-center items-center"><Badge >Disponible para trabajar</Badge></div>
+        </h1>
+        <h2 class="text-xl opacity-80">Estudiante de Ingeniería en Sistemas de Información. Desarrollador de software</h2>
+    
+    <ul>
+        <li>
+            <a href="https://www.linkedin.com/in/juan-ignacio-diaz-b3a167266/">
+                <Linkedin class="w-6 h-6"/>
+            </a>
+        </li>
+        <li>
+            
+        </li>
+    </ul>
+    </section>
+    </main>
 </Layout>
