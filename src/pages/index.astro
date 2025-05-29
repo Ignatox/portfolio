@@ -2,52 +2,69 @@
 
 import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro';
-import Linkedin from '../components/Linkedin.astro';
-import Github from '../components/Github.astro';
-import Curriculum from '../components/Curriculum.astro';
+import ContactIcon from '../components/icons/ContactIcon.astro';
+import Github from '../components/icons/Github.astro';
+import Linkedin from '../components/icons/Linkedin.astro';
+import Curriculum from '../components/icons/Curriculum.astro';
+import Experience from '../components/Experience.astro';
+import AvailableBadge from '../components/AvailableBadge.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import BookIcon from '../components/icons/BookIcon.astro';
+import Footer from '../components/Footer.astro';
+import SocialPill from '../components/SocialPill.astro';
 ---
 
-<Layout>
-	<main>
-    <section class="w-full mx-auto lg:w-[740px] py-44 flex flex-col items-center">
+<Layout title="Porfolio - Juan Ignacio Diaz - Ing. en Sistemas" description="Mi portfolio personal, donde muestro mis proyectos y habilidades, en busqueda de oportunidades laborales">
+	<main class="px-4">
+    <SectionContainer id="top" class="py-44 pb-24 flex flex-col items-center">
         <img 
-        class="rounded-full w-36 h-36 mb-4"
+        class="rounded-full size-36 mb-4"
         src="/igna-icon.png" 
         alt="igna photo"
         />
-        <h1 class="text-white text-5xl flex flex-row gap-x-4 pb-4" >
+        <h1 class="text-white text-3xl lg:text-5xl flex flex-row gap-x-2 lg:gap-x-4 pb-4" >
             <span class="text-[#0F969C]">¡Hola!</span> Soy <span class="font-bold">Juan Ignacio</span>
         </h1>
-        <div class="flex justify-center items-center m-4"><Badge >Disponible para trabajar</Badge></div>
-        <h2 class="text-xl opacity-80 text-center">Estudiante de Ingeniería en Sistemas de Información, desarrollador de software y un apasionado por la tecnología, de Mendoza, Argentina AR</h2>
+        <!-- div class="flex justify-center items-center m-4"><Badge >Disponible para trabajar</Badge></div>-->
+        
+        <h2 class="text-xl lg:text-2xl opacity-80 text-center max-w-[700px]">Estudiante de Ingeniería en Sistemas de Información, desarrollador de software y un apasionado por la tecnología, de Mendoza, Argentina AR</h2>
     
-    <ul class="flex gap-6 mt-4">
+    <ul class="flex gap-6 mt-8 flex-wrap">
         <li>
-            <a href="https://www.linkedin.com/in/juan-ignacio-diaz-b3a167266/" 
-            class="flex items-center gap-2 px-4 py-1 rounded-lg border border-gray-300 hover:bg-[#0F969C] hover:bg-opacity-10 transition-colors duration-300"
-            >
+            <SocialPill href="https://www.linkedin.com/in/juan-ignacio-diaz-b3a167266/">
                 <Linkedin />
                 Linkedin
-            </a>
+            </SocialPill>
         </li>
         <li>
-            <a href="https://github.com/Ignatox"
-            class="flex items-center gap-2 px-4 py-1 rounded-lg border border-gray-300 hover:bg-[#0F969C] hover:bg-opacity-10 transition-colors duration-300">
+            <SocialPill href="https://github.com/Ignatox">
                 <Github />
                 Github
-            </a>
+            </SocialPill>
         </li>
         <li>
-            <a href="/cv.pdf" download
-            class="flex items-center gap-2 px-4 py-1 rounded-lg border border-gray-300 hover:bg-[#0F969C] hover:bg-opacity-10 transition-colors duration-300"
-            >
+            <SocialPill href="mailto:ignaciodiaz93@gmail.com">
+                <ContactIcon />
+                Contacto
+            </SocialPill>
+        </li>
+        <li>
+            <SocialPill href="/cv.pdf" download>
                 <Curriculum />
                 CV
-            </a>
-
+            </SocialPill>
         </li>
     </ul>
 
-    </section>
+    </SectionContainer>
+    <SectionContainer id="formacion" class="flex flex-col items-center mb-24">
+        <h2 class="text-white text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+            <BookIcon class="size-6" />
+            Mi formación
+        </h2>
+        
+        <Experience />
+    </SectionContainer>
     </main>
+    <Footer />
 </Layout>

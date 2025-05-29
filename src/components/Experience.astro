@@ -1,0 +1,31 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+
+const EXPERIENCE = [
+    {
+        date: '2021 - Actualidad',
+        title: 'Ingeniería en Sistemas de Información',
+        description: 'Universidad Tecnológica Nacional - FRM',
+        present: 'Cursando 5to año',
+        link : 'https://www4.frm.utn.edu.ar/'
+    },
+    {
+        date: '2012 - 2019',
+        title: 'Inglés B2',
+        description: 'Instituto AMICANA',
+        present: 'Graduado',
+        link : '#'
+    }
+]
+---
+<ol class="items-center sm:flex">
+    {
+        EXPERIENCE.map((experience) => (
+        <li class="mb-6 sm:mb-0">
+            <ExperienceItem {...experience} />
+        </li>
+    ))
+    }
+    
+</ol>
+
