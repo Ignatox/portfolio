@@ -12,11 +12,15 @@ import SectionContainer from '../components/SectionContainer.astro';
 import BookIcon from '../components/icons/BookIcon.astro';
 import Footer from '../components/Footer.astro';
 import SocialPill from '../components/SocialPill.astro';
+import CodeIcon from '../components/icons/CodeIcon.astro';
+import Projects from '../components/Projects.astro';
+import StackIcon from '../components/icons/StackIcon.astro';
+import TechStack from '../components/TechStack.astro';
 ---
 
 <Layout title="Porfolio - Juan Ignacio Diaz - Ing. en Sistemas" description="Mi portfolio personal, donde muestro mis proyectos y habilidades, en busqueda de oportunidades laborales">
 	<main class="px-4">
-    <SectionContainer id="top" class="py-44 pb-24 flex flex-col items-center">
+    <SectionContainer id="top" class="py-44 pb-32 flex flex-col items-center">
         <img 
         class="rounded-full size-36 mb-4"
         src="/igna-icon.png" 
@@ -58,13 +62,30 @@ import SocialPill from '../components/SocialPill.astro';
 
     </SectionContainer>
     <SectionContainer id="formacion" class="flex flex-col items-center mb-24">
-        <h2 class="text-white text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+        <h2 class="text-white text-3xl font-semibold mb-6 flex gap-x-2 items-center">
             <BookIcon class="size-6" />
             Mi formación
         </h2>
         
         <Experience />
     </SectionContainer>
+</SectionContainer>
+<SectionContainer id="stack" class="flex flex-col items-center mb-24">
+    <h2 class="text-white text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+        <StackIcon class="size-6" />
+        Tech Stack
+        <TechStack />
+    </h2>
+<SectionContainer/>
+
+<SectionContainer id="proyectos" class="flex flex-col items-center mb-24">
+    <h2 class="text-white text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+        <CodeIcon class="size-6" />
+        Proyectos
+    </h2>
+    
+    <Projects />
+</SectionContainer>
     </main>
     <Footer />
 </Layout>

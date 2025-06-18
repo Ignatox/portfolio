@@ -1,0 +1,29 @@
+---
+import TechStackItem from './TechStackItem.astro';
+import PythonIcon from './icons/PythonIcon.astro';
+import JavaIcon from './icons/JavaIcon.astro';
+
+const TECHSTACK = [
+    {
+        name: 'Python',
+        description: 'Familiarizado con frameworks como Django y Flask, y con librerías como Pandas, NumPy y Matplotlib.',
+        icon: PythonIcon,
+    },
+    {
+        name: 'Java',
+        description: 'Mi lenguaje de programación favorito, con conocimientos en frameworks como Spring y Hibernate.',
+        icon: JavaIcon,
+    },
+
+];
+
+---
+{
+    TECHSTACK.map(({ name, description, icon}) => (
+    <article class="flex flex-col gap-y-4 border-1 rounded-lg border-white/50 p-3 items-center">
+        <h3 class="text-xl font-semibold text-[#6DA6C0]">{name}</h3>
+        <p class="text-lg mb-4 text-wrap">{description}</p>
+    </article>
+
+))
+}
