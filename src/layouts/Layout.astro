@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+}
+
+const { title = 'Portfolio' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body class="relative min-h-screen text-white antialiased">
+		<div class="bg-scene"></div>
+		<div class="relative">
+			<slot />
+		</div>
+	</body>
+</html>
+
+<style>
+	.bg-scene {
+		position: fixed;
+		inset: 0;
+		z-index: -1;
+		background-color: #060b18;
+		background-image:
+			radial-gradient(ellipse 800px 400px at 50% -80px, #1a3558, transparent),
+			radial-gradient(ellipse 600px 500px at 75% 500px, rgba(14, 31, 61, 0.7), transparent);
+	}
+
+	.bg-scene::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image: radial-gradient(rgba(100, 140, 200, 0.25) 1px, transparent 1px);
+		background-size: 24px 24px;
+		-webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 30%, black, transparent);
+		mask-image: radial-gradient(ellipse 80% 50% at 50% 30%, black, transparent);
+	}
+</style>
